@@ -7,7 +7,7 @@ import { cervezasSlice }from "./cervezasSilce";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cervezas, details"],
+  whitelist: ["cervezas, details, precarga"],
 };
 
 const rootReducer = combineReducers({

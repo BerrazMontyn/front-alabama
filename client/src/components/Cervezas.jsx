@@ -3,7 +3,10 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { details } from "../redux/cervezasActions";
 
-export default function Cervezas({ id, name, ibu, abv }) {
+
+export default function Cervezas({ id, name, ibu, abv, cerveceria }) {
+  
+
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -12,17 +15,18 @@ export default function Cervezas({ id, name, ibu, abv }) {
 
   return (
     <div>
-      <div>
-        <h2>
-          <Link to={`/description/${id}`} onClick={handleClick}>
-            {name}
-          </Link>
-        </h2>
-        <p>IBU: {ibu}</p>
-        <p>ABV: {abv}</p>
-      </div>
       
+        <Link
+          to={`/description/${id}`}
+          onClick={handleClick}
+          >
+
+        <p>{name} IBU: {ibu} ABV: {abv} Cerveceria: {cerveceria}</p>
+        </Link>    
+      
+      {/* <p className="mb-2 text-white"></p> */}
     </div>
+   
   );
 }
 

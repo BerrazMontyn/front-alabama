@@ -62,9 +62,13 @@ export const cervezasSlice = createSlice({
         }, 
         detailBeer: (state, action) => {
             state.cervezas = action.payload;
+        },
+        precarga: (state, action) => {
+            state.cervezas = action.payload
+            console.log("Carga de json", action.payload)
         }
     }
 });
 
-export const { getAllBeer, detailBeer } = cervezasSlice.actions;
+export const { getAllBeer, detailBeer, precarga } = cervezasSlice.actions;
 export default cervezasSlice.reducer
